@@ -1,0 +1,347 @@
+
+<html>
+<head>
+      <title>Teachers sign up</title>
+      <style>
+
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: White;
+  text-align: center;
+  padding: 14px 62px;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.button {
+    background-color: #2E86C1;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;}
+</style>
+
+    <script type="text/javascript">
+function validate(){
+  var flag=true;
+  //alert(document.fm.fileToUpload.value);
+  //alert(document.fm.uName.value);
+  m = document.getElementById("msg1");
+  m.innerHTML="";
+  document.fm.name.style.border="";
+  // m1 = document.getElementById("msg2");
+  // m1.innerHTML="";
+  // document.fm.lastname.style.border="1px solid black";
+  m2 = document.getElementById("msg3");
+  m2.innerHTML="";
+  //document.fm.day.style.border="1px solid black";
+  m3 = document.getElementById("msg4");
+  m3.innerHTML="";
+  m4 = document.getElementById("msg5");
+  m4.innerHTML="";
+  m5 = document.getElementById("msg6");
+  m5.innerHTML="";
+  m6 = document.getElementById("msg7");
+  m6.innerHTML="";
+  m7 = document.getElementById("msg8");
+  m7.innerHTML="";
+    m8 = document.getElementById("msg9");
+  m8.innerHTML="";
+    m9 = document.getElementById("msg10");
+  m9.innerHTML="";
+    m10 = document.getElementById("msg11");
+  m10.innerHTML="";
+  
+  //document.fm.firstname.style.border="1px solid black";
+  
+  if(document.fm.name.value.length==0){
+    document.fm.name.focus();
+    m.style.color="red";
+    document.fm.name.style.border="1px solid red";
+    m.innerHTML="you must type something";
+    flag=false;
+  }
+   if(document.fm.day.value=="day" || document.fm.month.value=="month" || document.fm.year.value=="year"){
+    //document.fm.day.focus();
+    m2.style.color="red";
+    //document.fm.day.style.border="1px solid red";
+    m2.innerHTML="invalid date of birth";
+    flag=false;
+  }
+   if(document.fm.male.checked==false && document.fm.female.checked==false)
+  {
+    m3.style.color="red";
+    m3.innerHTML=" you must choose a gender";
+    flag=false;
+  }
+    
+  /* if(document.fm.phone.value.length!=11){
+    //document.fm.day.focus();
+    m4.style.color="red";
+    //document.fm.phone.style.border="1px solid red";
+    m4.innerHTML="phone number must be 11 charcters";
+    flag=false;
+  }*/
+   //if(document.fm.emailId.value.length ==0){
+     
+     if (/^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/.test(document.fm.emailId.value)){
+     flag=true;
+     }
+     else 
+     
+     {//document.fm.day.focus();
+    m5.style.color="red";
+    //document.fm.phone.style.border="1px solid red";
+    m5.innerHTML="provide email id";
+    flag=false;
+    }
+     if(document.fm.address.value.length==0){
+    document.fm.name.focus();
+    m8.style.color="red";
+    document.fm.name.style.border="1px solid red";
+    m8.innerHTML="you must provide your address";
+    flag=false;
+  }
+  
+    
+  if(document.fm.enpassword.value.length <8){
+    //document.fm.day.focus();
+    m6.style.color="red";
+    //document.fm.phone.style.border="1px solid red";
+    m6.innerHTML="password must be 8 charcters";
+    flag=false;
+  }
+    
+    if(document.fm.uni.value.length==0){
+    //document.fm.uni.focus();
+    m9.style.color="red";
+    //document.fm.name.style.border="1px solid red";
+    m9.innerHTML="you must type your varsity name";
+    flag=false;
+  }
+    if(document.fm.cgpa.value>0 && document.fm.cgpa.value<=4){
+    flag=true;
+        }
+        //document.fm.uni.focus();
+    
+       else
+       {
+       m10.style.color="red";
+    //document.fm.name.style.border="1px solid red";
+    m10.innerHTML="you have enterd an invalid cgpa or empty";
+    flag=false;
+  }
+
+   if(document.fm.conpassword.value.length <8){
+    //document.fm.day.focus();
+    m7.style.color="red";
+    //document.fm.phone.style.border="1px solid red";
+    m7.innerHTML="password must be 8 charcters";
+    flag=false;
+  }
+  m=document.fm.phone.value/1000000000;
+    //alert(m);
+    if(m<9 && m>1)
+    {
+    flag=true;
+    }
+    else
+    {
+    m4.style.color="red";
+    //document.fm.phone.style.border="1px solid red";
+    m4.innerHTML="phone number must be 11 charcters";
+    flag=false;
+     }
+
+  return flag;
+}
+
+</script>
+</head>
+<body background="1.png"  >
+  <div class="topnav">
+  <a  href="Main.html">Home</a>
+  <a  href="About.html">About</a>
+  <a href="Find.php">Find Tuition</a>
+
+  <a  href="Adminlogin.php">Admin</a>
+  <a class="active" href="SignUp.html" >Sign Up</a>
+  <a href="Login1.php">Sign In</a>
+    <a  href="ContactUs.html">Contact Us</a>
+</div>
+ 
+<form id="fm" action="TeacherSignUp.php" method="post" enctype="multipart/form-data" name="fm"><pre>
+  
+<p align="center"> <font size="20" color="#CB4335"> Teacher Sign Up </font> </p>
+ 
+ <table align="center" bgcolor="#eee" width="45%" >
+  <tr>
+  <td>Name:</td>
+  <td><input type="text" name="name" id="txt1" placeholder=" Robert"></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg1"></span></td>
+  </tr>  
+  <tr>
+  <td>DOB:</td> 
+ 
+  <td>
+   <select name="day" id="day">
+   <option value="day">day</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+  <select name="month" id="month">
+  <option value="month">month</option>
+  <option value="jan">jan</option>
+  <option value="feb">feb</option>
+  <option value="march">march</option>
+  <option value="april">april</option>
+  <option value="may">may</option>
+  <option value="june">june</option>
+  <option value="july">july</option>
+  <option value="august">august</option>
+  <option value="september">september</option>
+  <option value="octobor">octobor</option>
+  <option value="November">November</option>
+   <option value="December">December</option>
+   </select>
+   
+    <select name ="year" id="year">
+  <option value="year">year</option>
+  <option value="1990">1990</option>
+  <option value="1991">1991</option>
+  <option value="1992">1992</option>
+  <option value="1993">1993</option>
+  <option value="1994">1994</option>
+  <option value="1995">1995</option>
+  <option value="1996">1996</option>
+  <option value="1997">1997</option>
+  <option value="1998">1998</option>
+  <option value="1999">1999</option>
+  <option value="2000">2000</option>
+   <option value="2001">2001</option>
+   
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg3"></span></td>
+  </tr>
+  <tr><td>  Gender:</td>
+  <td><input type="radio" name="gender" value="male" id="male"> Male
+  <input type="radio" name="gender" value="female" id="female"> Female
+  </td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg4"></span></td>
+  </tr>
+  <tr><td>Phone:</td>
+  <td><input type="text" name="phone" id="phone"length="11" placeholder="01234567890"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg5"></span></td>
+  </tr>
+   
+  <tr><td>EmailId:</td>
+  <td><input type="text" name="EmailId" id="emailId" placeholder="Example@gmail.com"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg6"></span></td>
+  </tr>
+  <tr><td>address:</td>
+  <td><input type="text" name="address" id="address" placeholder="Dhaka Cantonment"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg9"></span></td>
+  </tr>
+  <tr><td>University:</td>
+  <td><input type="text" name="uni" id="uni" placeholder="AIUB"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg10"></span></td>
+  </tr>
+  <tr><td>Cgpa:</td>
+  <td><input type="float" name="cgpa" id="cgpa" maxlength="4" placeholder="4.00"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg11"></span></td>
+  </tr>
+  <tr><td>Password:</td>
+  <td><input type="password" name="enpassword" id="enpassword" placeholder="dfgh123"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg7"></span></td>
+  </tr>
+  <tr><td>Confirm Password:</td>
+  <td><input type="password" name="conpassword" id="conpassword"></td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg8"></span></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><input type="Submit" class="button" onclick="return validate();" name="sbt" value="Submit"></td>
+  </tr>
+  </table>
+<p align="center" > <font size="4"> Already a member? </font> 
+<a  href="Login.html"><b style="color:red">Sign in Now!<b></a>
+</p>      
+
+ 
+<body/>
+
+
+<html/>  

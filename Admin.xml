@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<user type="admin">
+		<uname>Zishan</uname>
+		<pass>12345678</pass>
+		<email>mdjishan9700@gmail.com</email>
+	</user>
+	<user type="admin">
+		<uname>tanvir</uname>
+		<pass>12345</pass>
+		<email>tanvir@gmail.com</email>
+	</user>
+	<user type="admin">
+		<uname>istiak</uname>
+		<pass>123456</pass>
+		<email>istiak@gmail.com</email>
+	</user>
+</data>

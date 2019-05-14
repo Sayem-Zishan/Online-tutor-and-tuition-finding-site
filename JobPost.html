@@ -1,0 +1,312 @@
+<html>
+<head>
+      <title>Post a Job</title>
+      <style>
+
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: White;
+  text-align: center;
+  padding: 14px 62px;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.button {
+    background-color: #2E86C1;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;}
+</style>
+
+    <script type="text/javascript">
+function validate(){
+  var flag=true;
+   m = document.getElementById("msg1");
+  m.innerHTML="";
+
+  m2 = document.getElementById("msg2");
+  m2.innerHTML="";
+
+  m3 = document.getElementById("msg3");
+  m3.innerHTML="";
+
+  m4 = document.getElementById("msg4");
+  m4.innerHTML="";
+
+  m5 = document.getElementById("msg5");
+  m5.innerHTML="";
+
+  m6 = document.getElementById("msg6");
+  m6.innerHTML="";
+
+
+  m7 = document.getElementById("msg7");
+  m7.innerHTML="";
+
+  m9 = document.getElementById("msg9");
+  m9.innerHTML="";
+
+  if(document.fm.title.value.length==0)
+  {
+    document.fm.title.focus();
+    m.style.color="red";
+    document.fm.title.style.border="1px solid red";
+    m.innerHTML="you must type something";
+    flag=false;
+  }
+
+    if(document.fm.class.value=="class")
+    {
+   
+      m2.style.color="red";
+      m2.innerHTML="select a class";
+      flag=false;
+  }
+
+   if(document.fm.daypweek.value=="Choose")
+    {
+   
+      m3.style.color="red";
+      m3.innerHTML="select day per week";
+      flag=false;
+  }
+
+  if(document.fm.smale.checked==false && document.fm.sfemale.checked==false)
+  {
+    m4.style.color="red";
+    m4.innerHTML=" you must choose a gender";
+    flag=false;
+  }
+
+  if(document.fm.salary.value.length==0)
+  {
+    document.fm.salary.focus();
+    m5.style.color="red";
+    document.fm.salary.style.border="1px solid red";
+    m5.innerHTML="you must fill this field";
+    flag=false;
+  }
+
+  if(document.fm.pmale.checked==false && document.fm.pfemale.checked==false)
+  {
+    m6.style.color="red";
+    m6.innerHTML=" you must choose a gender";
+    flag=false;
+  }
+
+  if(document.fm.location.value.length==0)
+  {
+    document.fm.location.focus();
+    m7.style.color="red";
+    document.fm.location.style.border="1px solid red";
+    m7.innerHTML="you must fill this field";
+    flag=false;
+  }
+
+
+  if(document.fm.category.value=="category")
+    {
+   
+      m9.style.color="red";
+      m9.innerHTML="select a category";
+      flag=false;
+  }
+
+  return flag;
+}
+
+</script>
+</head>
+<body background="1.png"  >
+  <div class="topnav">
+  <a  href="Main.html">Home</a>
+  <a  href="About.html">About</a>
+  <a  href="ContactUs.html">Contact Us</a>
+   <a  href="">Update Profile</a>
+    <a  href="Unset1.php">Logout</a>
+</div>
+ 
+<form id="fm" action="JobPostVer.php" method="post" enctype="multipart/form-data" name="fm"><pre>
+  
+<p align="center"> <font size="20" color="#CB4335"> Post a Job </font> </p>
+ 
+ <table align="center" bgcolor="#eee" width="45%" >
+
+
+  <tr>
+  <td>Title:</td>
+  <td><input type="text" name="title" id="txt1" placeholder=" "></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg1"></span></td>
+  </tr>  
+
+
+
+  <tr>
+  <td>Class:</td> 
+ 
+  <td>
+   <select name="class" id="class">
+   <option value="class">class</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">Inter 1st Year</option>
+  <option value="12">Inter 2nd Year</option>
+ 
+</select>
+  
+    
+  </td>
+  </tr>
+   <tr>
+  <td></td>
+  <td><span id="msg2"></span></td>
+  </tr>
+
+
+
+
+  <tr>
+  <td>Day Per Week:</td> 
+ 
+  <td>
+   <select name="daypweek" id="dayp">
+   <option value="Choose">Choose</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+
+</select>
+   
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg3"></span></td>
+  </tr>
+
+
+  <tr><td> Student Gender:</td>
+  <td><input type="radio" name="sgender" value="male" id="smale"> Male
+  <input type="radio" name="sgender" value="female" id="sfemale"> Female
+  </td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg4"></span></td>
+  </tr>
+
+
+  <tr>
+  <td>Salary:</td>
+  <td><input type="text" name="salary" id="txt1" placeholder=" "></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg5"></span></td>
+  </tr> 
+
+
+  <tr><td> Preffered Gender:</td>
+  <td><input type="radio" name="pgender" value="male" id="pmale"> Male
+  <input type="radio" name="pgender" value="female" id="pfemale"> Female
+  </td></tr>
+  <tr>
+  <td></td>
+  <td><span id="msg6"></span></td>
+  </tr>
+
+<tr>
+  <td>Location:</td>
+  <td><input type="text" name="location" id="txt1" placeholder=" "></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg7"></span></td>
+  </tr> 
+
+
+  <tr>
+  <td>Subject:</td>
+  <td><input type="text" name="req" id="txt1" placeholder=" "></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg8"></span></td>
+  </tr> 
+
+
+
+ <tr>
+  <td>Category:</td> 
+ 
+  <td>
+   <select name="category" id="category">
+   <option value="category">category</option>
+  <option value="Bangla Medium">Bangla Medium</option>
+  <option value="English Medium">English Medium</option> 
+    <option value="English Version">English Version</option>
+
+ 
+</select>
+  
+ 
+  </td>
+  </tr>
+  <tr>
+  <td></td>
+  <td><span id="msg9"></span></td>
+  </tr> 
+
+
+
+
+
+  <tr>
+  <td></td>
+  <td><input type="Submit" class="button" onclick="return validate();" name="sbt" value="Submit"></td>
+  </tr>
+  </table>
+
+ 
+<body/>
+
+
+<html/>  
